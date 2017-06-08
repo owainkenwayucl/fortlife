@@ -25,4 +25,4 @@ PBMTOOLS.o: PBMTOOLS.F Makefile.gnu
 	$(FC) -c PBMTOOLS.F
 
 clean: 
-	rm -f test life show *.o out.pbm
+	rm -f test life.exe show.exe *.o out.pbm
