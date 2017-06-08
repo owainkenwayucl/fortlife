@@ -8,7 +8,7 @@ This is a fairly simple implementation of Conway's Game of Life, written in Fort
 
 On FreeDOS, install the Open Watcom Fortran compiler, download the repository and then compile the code by running `wmake`.  Optionally, you can also compile a tool for displaying PBM files by runnig `wmake show.exe`.
 
-on linux, you can compile the code with gfortran by running `make -f makefile.gnu`.  You can also build the show utility, but you are better of using basically any other image viewer.
+On Linux, you can compile the code with gfortran by running `make -f Makefile.gnu`.  You can also build the show utility, but you are better of using basically any other image viewer.
 
 ## Running
 
