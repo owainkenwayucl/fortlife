@@ -1,0 +1,32 @@
+FC=wfl386
+
+life.exe: life.obj period2d.obj pbmtools.obj ouchow.obj drawow.obj
+	$(FC) period2d.obj pbmtools.obj ouchow.obj drawow.obj life.obj
+
+show.exe: show.obj period2d.obj pbmtools.obj ouchow.obj drawow.obj
+	$(FC) period2d.obj pbmtools.obj ouchow.obj drawow.obj show.obj
+
+show.obj: show.f makefile
+	$(FC) -c show.f
+
+life.obj: life.f makefile
+	$(FC) -c life.f
+
+ouchow.obj: ouchow.f makefile
+	$(FC) -c ouchow.f
+
+drawow.obj: drawow.f makefile
+	$(FC) -c drawow.f
+
+period2d.obj: period2d.f makefile
+	$(FC) -c period2d.f
+
+pbmtools.obj: pbmtools.f makefile
+	$(FC) -c pbmtools.f
+
+
+clean:
+	del *.obj
+	del *.exe
+	del *.err
+	del out.pbm
