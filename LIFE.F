@@ -13,7 +13,7 @@ c     Maximum size of simulation in bytes (cells).
         parameter (m = 1000000)
 
         character ar*1024, arr(m), instr
-        integer w, h, i
+        integer w, h, i, p 
 
         ar = ' '
 
@@ -33,7 +33,8 @@ c     Initialise our simulation, load file, draw it.
 c     Our main loop - continue at return press until ^C.
         i = 0
         do 
-          call wrgen(i)
+          call pop(arr, m, w, h, p)
+          call wrgen(i, p)
           read(*,'(A)') instr
           call update(arr, m, w, h)
           call pr2box(arr, m, w, h)

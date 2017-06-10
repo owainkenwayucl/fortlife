@@ -2,12 +2,12 @@ c     This module provides routines for output using codepage 437 chars
 c     when compiled with Open Watcom F77 on FreeDOS.
 
 c     Print a generation number label.
-      subroutine wrgen(g)
+      subroutine wrgen(g, p)
         implicit none
 
-          integer g
+          integer g, p
 
-          write (*, 91) '  Generation:', g
+          write (*, 91) '  Generation:', g, '        Population:', p
   91      format(A,1I8,$)
 
       end
@@ -20,9 +20,9 @@ c     Top line.
         integer i, w, fl
         character l, m ,r
         
-        r = '¿'
-        m = 'Ä'
-        l = 'Ú'
+        r = char(191)
+        m = char(196)
+        l = char(218)
 
         fl = w
         if (w .ge. 78) then
@@ -50,9 +50,9 @@ c     Bottom line.
         integer i, w, fl
         character l, m ,r
 
-        r = 'Ù'
-        m = 'Ä'
-        l = 'À'
+        r = char(217)
+        m = char(196)
+        l = char(192)
 
         fl = w
         if (w .ge. 78) then
@@ -82,7 +82,7 @@ c     Draw a line (78 character + edges).
         character arr(m), e, t, f, tc
         integer i, fl, ti
 
-        e = '³'
+        e = char(179)
         t = 'o'
         f = ' '
 
@@ -118,12 +118,12 @@ c     Draw a double line (78 character + edges).
         character arr(m), e, tc, p(0:3)
         integer i, fl, ti, tii, idex
 
-        e = '³'
+        e = char(179)
 
         p(0) = ' '
-        p(1) = 'Ü'
-        p(2) = 'ß'
-        p(3) = 'Û'
+        p(1) = char(220)
+        p(2) = char(223)
+        p(3) = char(219)
 
         fl = w
         if (w .gt. 78) then

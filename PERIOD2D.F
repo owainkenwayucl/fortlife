@@ -97,4 +97,20 @@ c     Get 9way sum
         v = nw + no + ne + ea + l + we + sw + so + se
       end
 
+c     Calculate the population (sum)
+      subroutine pop(arr, m, w, h, p)
+        implicit none
+        integer m, w, h, p
+        character arr(m), v
+        integer i, s
+       
+        p = 0
+        s = w*h
 
+        do i = 1, s
+          v = arr(i)
+          if (v .eq. '1') then
+            p = p + 1
+          endif
+        enddo
+      end

@@ -1,11 +1,12 @@
 c     This module provides routine for output when compiled with gfortran.
 
 c     Output generation message. 
-      subroutine wrgen(g)
+      subroutine wrgen(g, p)
         implicit none
 
-        integer g
+        integer g, p
           write (*, 91) ' ^ Generation:', g
+          write (*, 91) '   Population:', p
   91      format(A,1I8,$)
 
       end
