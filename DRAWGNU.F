@@ -5,7 +5,7 @@ c     Output generation message.
         implicit none
 
         integer g, p
-          write (*, 91) ' ^ Generation:', g
+          write (*, 91) ' ↑ Generation:', g
           write (*, 91) '   Population:', p
   91      format(A,1I8,$)
 
@@ -16,28 +16,25 @@ c     Output generation message.
         implicit none
 
         integer i, w, fl
-        character l, m ,r
+        character l*4, m*4 ,r*4
         
-        r = '+'
-        m = '-'
-        l = '+'
+        l = '╭'
+        m = '─'
+        r = '╮'
 
         fl = w
-        if (w .ge. 78) then
-          fl = 78
-        endif
-   34   format(A1,$)  
-   35   format(A1)  
+   34   format(A,$)  
+   35   format(A)  
 
-        write(*,34) l
+        write(*,34) trim(l)
 
         do i = 1,fl
-          write(*,34) m
+          write(*,34) trim(m)
         enddo
         if (fl .eq. 78) then
-          write(*,34) r
+          write(*,34) trim(r)
         else
-          write(*,35) r
+          write(*,35) trim(r)
         endif
       end
 
@@ -46,52 +43,42 @@ c     Output generation message.
         implicit none
 
         integer i, w, fl
-        character l, m ,r
+        character l*4, m*4 ,r*4
 
-        r = '+'
-        m = '-'
-        l = '+'
+        r = '╯'
+        m = '─'
+        l = '╰'
 
         fl = w
-        if (w .ge. 78) then
-          fl = 78
-        endif
-   36   format(A1,$)  
-   37   format(A1) 
+   36   format(A,$)  
+   37   format(A) 
 
-        write(*,36) l
+        write(*,36) trim(l)
 
         do i = 1,fl
-          write(*,36) m
+          write(*,36) trim(m)
         enddo
-        if (fl .eq. 78) then
-          write(*,36) r
-        else
-          write(*,37) r
-        endif
+        write(*,37) trim(r)
       end
 
 
-!     Draw a line (78 character + edges)
+!     Draw a line 
       subroutine prline(arr, m, w, h, y)
         implicit none
 
         integer m, w, h, y
-        character arr(m), e, t, f, tc
+        character arr(m), e*4, t, f, tc
         integer i, fl, ti
 
-        e = '|'
+        e = '│'
         t = 'o'
         f = ' '
 
         fl = w
-        if (w .gt. 78) then
-          fl = 78
-        endif
-   32   format(A1,$)  
-   33   format(A1) 
+   32   format(A,$)  
+   33   format(A) 
 
-        write(*,32) e 
+        write(*,32) trim(e) 
         do i = 1, fl
           call get(arr, m, w, h, i, y, ti)
           if (ti .eq. 1) then
@@ -101,11 +88,45 @@ c     Output generation message.
           endif
           write(*,32) tc
         enddo
-        if (fl .eq. 78) then
-          write(*,32) e
-        else
-          write(*,33) e
-        endif
+        write(*,33) trim(e)
+      end
+c     Draw a double line (78 character + edges).
+      subroutine pr2line(arr, m, w, h, y)
+        implicit none
+
+        integer m, w, h, y
+        character arr(m) 
+        character*4 p(0:3), e, tc
+        integer i, fl, ti, tii, idex
+
+        e = '│'
+
+        p(0) = ' '
+        p(1) = '▄' 
+        p(2) = '▀'
+        p(3) = '█'
+
+        fl = w
+   32   format(A,$)  
+   33   format(A) 
+
+        write(*,32) trim(e) 
+        do i = 1, fl
+          call get(arr, m, w, h, i, y, ti)
+          if (y .eq. h) then
+            tii = 0
+          else
+            call get(arr, m, w, h, i, (y+1), tii)
+          endif
+          idex = (2*ti) + tii
+          tc = p(idex)
+          if (idex .eq. 0) then
+            write(*,32) ' '
+          else  
+            write(*,32) trim(tc)
+          endif
+        enddo
+        write(*,33) trim(e)
       end
 
 !     Print a period2d array
@@ -115,11 +136,7 @@ c     Output generation message.
         integer m, w, h, i, fh, maxl
         character arr(m)
 
-        maxl = 46
         fh = h
-        if (h .gt. maxl) then
-          fh = maxl
-        endif
 
         call prtop(w)
         do i = 1, fh
@@ -135,5 +152,12 @@ c     Output generation message.
         integer m, w, h, i, fh, maxl
         character arr(m)
 
-        call prbox(arr, m, w, h)
-      end
+        fh = h
+        fh = (fh+1)/2
+        call prtop(w)
+        do i = 1, fh
+          call pr2line(arr, m, w, h, (i*2)-1)
+        enddo 
+        call prbot(w)
+      end 
+
