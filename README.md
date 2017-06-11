@@ -10,6 +10,8 @@ On FreeDOS, install the Open Watcom Fortran compiler, download the repository an
 
 On Linux, you can compile the code with gfortran by running `make -f Makefile.gnu`.  You can also build the show utility, but you are better of using basically any other image viewer.
 
+(Testing has shown that the Linux version of `life.exe` compiles successfully under Cygwin, the only downside being font support in MinTTY).
+
 ## Running
 
 To run the code, run `life.exe <inputfile>` for some input PBM file.  Some examples can be found in the `input` directory.
