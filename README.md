@@ -42,3 +42,9 @@ $ ./life.exe input/eater.pbm
  ↑ Generation:       0   Population:      43
 ```
 
+On github the text above looks pretty terrible (this shows the importance of font choice when running the code).
+
+In `gnome-terminal`, this is what the code looks like:
+
+![Screenshot of fortlife running on Linux](https://pbs.twimg.com/media/DB-eaAaWsAAHDLy.png:large)
+
