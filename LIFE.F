@@ -20,7 +20,7 @@ c     Maximum size of simulation in bytes (cells).
 c     Get args via our platform independent wrapper.
         call countargs(n)
         if (n .ge. 1) then
-          call getargat(n, ar, l)
+          call getargat(1, ar, l)
         else
           stop 'Invoke with: life.exe <filename>'
         endif
