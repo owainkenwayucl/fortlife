@@ -193,7 +193,7 @@ c     Draw a row of unicode characters encoding the 2x4 boxes as braille.
         fh = h
         fh = (fh+3)/4
         call prtop(w)
-        do i = 1, fh
+        do i = 0, fh
           call pr2line(arr, m, w, h, (i*4)-1)
         enddo 
         call prbot(w)
