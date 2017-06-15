@@ -155,7 +155,7 @@ c     Draw a double line (78 character + edges).
         fh = h
         fh = (fh+1)/2
         call prtop(w)
-        do i = 0, (fh -1)
+        do i = 1, fh
           call pr2line(arr, m, w, h, (i*2)-1)
         enddo 
         call prbot(w)
