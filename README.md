@@ -50,7 +50,7 @@ In `gnome-terminal`, this is what the code looks like:
 
 ![Screenshot of fortlife running on Linux](https://pbs.twimg.com/media/DB-eaAaWsAAHDLy.png:large)
 
-Here is the output of the braille version:
+Here is the output of the braille version (again this looks awful on Github):
 
 ```none
 ./life.braille input/eater.pbm 
