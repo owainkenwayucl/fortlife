@@ -24,5 +24,8 @@ PERIOD2D.o: PERIOD2D.F Makefile.gnu
 PBMTOOLS.o: PBMTOOLS.F Makefile.gnu
 	$(FC) -c PBMTOOLS.F
 
+tidy: 
+	rm -f *.o
+
 clean: 
-	rm -f test life.exe show.exe *.o out.pbm
+	rm -f life.exe show.exe *.o 

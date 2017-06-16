@@ -25,4 +25,7 @@ PBMTOOLS.o: PBMTOOLS.F Makefile.br
 	$(FC) -c PBMTOOLS.F
 
 clean: 
-	rm -f test life.braille show.braille *.o out.pbm
+	rm -f life.braille show.braille *.o 
+
+tidy: 
+	rm -f *.o 

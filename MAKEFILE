@@ -30,3 +30,8 @@ clean:
 	del *.exe
 	del *.err
 	del out.pbm
+
+tidy:
+	del *.obj
+	del *.err
+
