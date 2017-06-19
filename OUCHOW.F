@@ -33,3 +33,28 @@ c     Equivalent of gettim
         call gettim(hrs,mins,sec,hsec)
         t = (3600*hrs) + (60*mins) + sec + (hsec/100.0)
       end
+
+c     Start random number generation.
+c     Technically we don't need to do anything in OpenWatcom
+      subroutine initrand(seed)
+        implicit none
+
+        integer seed, dummy
+
+c       Do something with seed to supress warnings.
+        dummy = seed
+
+      end
+
+c     Get next number.
+c     Need to pass seed as that's always needed by OpenWatcom
+      function getrand(seed)
+        implicit none
+
+        real getrand, urand
+        integer seed
+
+        getrand = urand(seed)
+
+      end
+

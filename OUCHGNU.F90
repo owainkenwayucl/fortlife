@@ -33,3 +33,25 @@ subroutine getsec(t)
 
   call cpu_time(t)
 end
+
+! Start random number generation.
+! Technically we don't need to do anything in OpenWatcom
+subroutine initrand(seed)
+  implicit none
+
+  integer, intent(in) :: seed
+
+  call srand(seed)
+end
+
+! Get next number.
+! Need to pass seed as that's always needed by OpenWatcom
+function getrand(seed)
+  implicit none
+
+  real :: getrand
+  integer :: seed
+
+  getrand = rand()
+
+end

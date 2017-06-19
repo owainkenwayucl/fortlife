@@ -1,10 +1,24 @@
 FC=wfl386
 
+all: life.exe show.exe genblank.exe genrand.exe tidy
+
 life.exe: life.obj period2d.obj pbmtools.obj ouchow.obj drawow.obj
 	$(FC) period2d.obj pbmtools.obj ouchow.obj drawow.obj life.obj
 
 show.exe: show.obj period2d.obj pbmtools.obj ouchow.obj drawow.obj
 	$(FC) period2d.obj pbmtools.obj ouchow.obj drawow.obj show.obj
+
+genblank.exe: genblank.obj period2d.obj pbmtools.obj ouchow.obj
+	$(FC) period2d.obj pbmtools.obj ouchow.obj genblank.obj
+
+genrand.exe: genrand.obj period2d.obj pbmtools.obj ouchow.obj
+	$(FC) period2d.obj pbmtools.obj ouchow.obj genrand.obj
+
+genblank.obj: genblank.f makefile
+	$(FC) -c genblank.f
+
+genrand.obj: genrand.f makefile
+	$(FC) -c genrand.f
 
 show.obj: show.f makefile
 	$(FC) -c show.f

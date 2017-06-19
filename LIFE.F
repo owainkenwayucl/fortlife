@@ -46,8 +46,8 @@ c     Initialise our simulation, load file, draw it.
 
 c     Our main loop - continue at return press until ^C.
         i = 0
-        call wrgen(i, p)
         call pop(arr, m, w, h, p)
+        call wrgen(i, p)
         running = .TRUE.
         do while (running)
           i=i+1
