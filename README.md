@@ -12,7 +12,7 @@ On Linux, you can compile the code with gfortran by running `make -f Makefile.gn
 
 (Testing has shown that the Linux version of `life.exe` compiles successfully under Cygwin, the only downside being font support in MinTTY).
 
-There is a special Linux version if your font has braille characters, which can be built by running `make -f Makefile.br`.  The resulting executables have a `.braille` extension instead of `.exe`.
+There is a special Linux version if your font has braille characters, which can be run by running `life.braille`.
 
 ## Running
 

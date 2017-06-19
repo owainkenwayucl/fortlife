@@ -1,5 +1,11 @@
 FC=gfortran
 
+life.braille: LIFE.o PERIOD2D.o PBMTOOLS.o OUCHGNU.o DRAWBRAI.o life.exe show.exe
+	$(FC) -o life.braille LIFE.o PERIOD2D.o PBMTOOLS.o OUCHGNU.o DRAWBRAI.o
+
+show.braille: SHOW.o PERIOD2D.o PBMTOOLS.o OUCHGNU.o DRAWBRAI.o
+	$(FC) -o show.braille SHOW.o PERIOD2D.o PBMTOOLS.o OUCHGNU.o DRAWBRAI.o
+
 life.exe: LIFE.o PERIOD2D.o PBMTOOLS.o OUCHGNU.o DRAWGNU.o
 	$(FC) -o life.exe LIFE.o PERIOD2D.o PBMTOOLS.o OUCHGNU.o DRAWGNU.o
 
@@ -11,6 +17,9 @@ LIFE.o: LIFE.F Makefile.gnu
 
 SHOW.o: SHOW.F Makefile.gnu
 	$(FC) -c SHOW.F
+
+DRAWBRAI.o: DRAWBRAI.F Makefile.br
+	$(FC) -c DRAWBRAI.F
 
 DRAWGNU.o: DRAWGNU.F Makefile.gnu
 	$(FC) -c DRAWGNU.F
