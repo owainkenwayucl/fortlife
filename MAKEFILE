@@ -1,6 +1,6 @@
 FC=wfl386
 
-all: life.exe show.exe genblank.exe genrand.exe tidy
+all: life.exe show.exe genblank.exe genrand.exe tidy .SYMBOLIC
 
 life.exe: life.obj period2d.obj pbmtools.obj ouchow.obj drawow.obj
 	$(FC) period2d.obj pbmtools.obj ouchow.obj drawow.obj life.obj
@@ -39,13 +39,13 @@ pbmtools.obj: pbmtools.f makefile
 	$(FC) -c pbmtools.f
 
 
-clean:
+clean: .SYMBOLIC
 	del *.obj
 	del *.exe
 	del *.err
 	del out.pbm
 
-tidy:
+tidy: .SYMBOLIC
 	del *.obj
 	del *.err
 
