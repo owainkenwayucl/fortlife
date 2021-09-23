@@ -24,75 +24,9 @@ The program will draw the file into the terminal, move forward a generation with
 
 Here is the output when run on Linux (note, you need a Unicode supporting terminal):
 
-```none
-$ ./life.exe input/eater.pbm 
-╭──────────────────────────────────────────────────╮
-│                         ▄                        │
-│             ▄▄      ▄▄▀ ▀         ▄▄             │
-│ ▄▄        ▄▀   ▀▄   ██            ▀▀             │
-│ ▀▀        █   ▀ █▀    ▀ █                        │
-│            ▀▄▄ ▀                                 │
-│                                                  │
-│                                                  │
-│                                                  │
-│                                                  │
-│                                 ▄▄               │
-│                                 ▀ █              │
-│                                   ▀▀             │
-│                                                  │
-│                                                  │
-│                                                  │
-╰──────────────────────────────────────────────────╯
- ↑ Generation:       0   Population:      43
-```
-
-On github the text above looks pretty terrible (this shows the importance of font choice when running the code).
-
-In `gnome-terminal`, this is what the code looks like:
-
 ![Screenshot of fortlife running on Linux](images/fortlife-linux.png)
 
-Here is the output of the braille version (again this looks awful on Github):
-
-```none
-./life.braille input/eater.pbm 
-╭─────────────────────────╮
-│⠀⠀⠀⠀⠀⠀⢀⡀⠀⠀⢀⡠⠰⠀⠀⠀⠀⢀⡀⠀⠀⠀⠀⠀⠀│
-│⠰⠆⠀⠀⠀⢰⠁⠠⢱⠄⠘⠣⢠⠀⠀⠀⠀⠈⠁⠀⠀⠀⠀⠀⠀│
-│⠀⠀⠀⠀⠀⠀⠑⠂⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀│
-│⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀│
-│⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡀⠀⠀⠀⠀⠀⠀⠀│
-│⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠸⠄⠀⠀⠀⠀⠀⠀│
-│⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀│
-│⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀│
-╰─────────────────────────╯
- ↑ Generation:       0   Population:      43
-╭─────────────────────────╮
-│⠀⠀⠀⠀⠀⠀⢀⠀⠀⠀⢀⢄⠆⠀⠀⠀⠀⢀⡀⠀⠀⠀⠀⠀⠀│
-│⠰⠆⠀⠀⠀⢴⡏⠀⢰⡆⠑⠜⡄⠀⠀⠀⠀⠈⠁⠀⠀⠀⠀⠀⠀│
-│⠀⠀⠀⠀⠀⠀⠙⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀│
-│⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀│
-│⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡀⠀⠀⠀⠀⠀⠀⠀│
-│⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠸⠄⠀⠀⠀⠀⠀⠀│
-│⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀│
-│⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀│
-╰─────────────────────────╯
- ↑ Generation:       1   Population:      46
-╭─────────────────────────╮
-│⠀⠀⠀⠀⠀⠀⣀⠀⠀⠀⢀⢔⡄⠀⠀⠀⠀⢀⡀⠀⠀⠀⠀⠀⠀│
-│⠰⠆⠀⠀⠀⡎⠨⠀⢔⡲⠙⢜⠇⠀⠀⠀⠀⠈⠁⠀⠀⠀⠀⠀⠀│
-│⠀⠀⠀⠀⠀⠈⠚⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀│
-│⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀│
-│⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡀⠀⠀⠀⠀⠀⠀⠀│
-│⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠸⠄⠀⠀⠀⠀⠀⠀│
-│⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀│
-│⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀│
-╰─────────────────────────╯
- ↑ Generation:       2   Population:      50^C
-$ 
-```
-
-And, as before, a screenshot:
+Here is the output of the braille version:
 
 ![Screenshot of fortlife running on Linux](images/fortlife-braille.png)
 
