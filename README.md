@@ -50,7 +50,7 @@ On github the text above looks pretty terrible (this shows the importance of fon
 
 In `gnome-terminal`, this is what the code looks like:
 
-![Screenshot of fortlife running on Linux](mages/fortlife-linux.png)
+![Screenshot of fortlife running on Linux](images/fortlife-linux.png)
 
 Here is the output of the braille version (again this looks awful on Github):
 
