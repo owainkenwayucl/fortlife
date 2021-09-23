@@ -192,6 +192,7 @@ c     Draw a row of unicode characters encoding the 2x4 boxes as braille.
 
         fh = h
         fh = (fh+3)/4
+        call clearterm()
         call prtop(w)
         do i = 1, fh
           call pr2line(arr, m, w, h, (i*4)-3)
@@ -199,3 +200,10 @@ c     Draw a row of unicode characters encoding the 2x4 boxes as braille.
         call prbot(w)
       end 
 
+! Clear the terminal (ANSI)
+      subroutine clearterm()
+        implicit none
+        write(*,66) achar(27)//"[2J"//achar(27)//"[;H"
+
+  66    format(A,$)
+      end

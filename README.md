@@ -14,6 +14,8 @@ On Linux, you can compile the code with gfortran by running `make -f Makefile.gn
 
 There is a special Linux version if your font has braille characters, which can be run by running `life.braille`.
 
+On Linux, the program clears the screen between iterations using ANSI control codes.  This is yet to be implemented on the DOS version.
+
 ## Running
 
 To run the code, run `life.exe <inputfile>` for some input PBM file.  Some examples can be found in the `input` directory.
@@ -48,7 +50,7 @@ On github the text above looks pretty terrible (this shows the importance of fon
 
 In `gnome-terminal`, this is what the code looks like:
 
-![Screenshot of fortlife running on Linux](https://pbs.twimg.com/media/DB-eaAaWsAAHDLy.png:large)
+![Screenshot of fortlife running on Linux](mages/fortlife-linux.png)
 
 Here is the output of the braille version (again this looks awful on Github):
 
@@ -92,5 +94,5 @@ $
 
 And, as before, a screenshot:
 
-![Screenshot of fortlife running on Linux](https://pbs.twimg.com/media/DCX0haOXgAE2H-E.png:large)
+![Screenshot of fortlife running on Linux](images/fortlife-braille.png)
 

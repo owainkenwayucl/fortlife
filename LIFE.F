@@ -58,6 +58,9 @@ c     Our main loop - continue at return press until ^C.
             if (i .ge. it) then
               running = .FALSE.
             endif
+            if (wrt .eqv. .FALSE.) then
+              call sleep(1)
+            endif
           endif
           call update(arr, m, w, h)
           if (wrt) then
