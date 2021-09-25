@@ -58,3 +58,8 @@ c     Need to pass seed as that's always needed by OpenWatcom
 
       end
 
+c     Stub as there is no sleep.
+      subroutine sleep(seconds)
+        implicit none
+        integer seconds
+      end
