@@ -4,6 +4,8 @@ This is a fairly simple implementation of Conway's Game of Life, written in Fort
 
 ![Photo of fortlife running on FreeDOS](https://pbs.twimg.com/media/DBexs7TW0AIRzaK.jpg:large)
 
+**Note** - *the image above shows an older version which does not clear screen between frames.*
+
 ## Compilation
 
 On FreeDOS, install the Open Watcom Fortran compiler, download the repository and then compile the code by running `wmake`.  Optionally, you can also compile a tool for displaying PBM files by running `wmake show.exe`.
@@ -14,7 +16,6 @@ On Linux, you can compile the code with gfortran by running `make -f Makefile.gn
 
 There is a special Linux version if your font has braille characters, which can be run by running `life.braille`.
 
-On Linux, the program clears the screen between iterations using ANSI control codes.  This is yet to be implemented on the DOS version.
 
 ## Running
 

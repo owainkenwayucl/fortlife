@@ -39,6 +39,11 @@ c     Get args via our platform independent wrapper.
           fnw = 9-nfnw 
         endif
 
+c     Pause if rendering on DOS to show DOS/4G notice
+        if (wrt .eqv. .FALSE.) then
+          call dossleep(3)
+        endif
+
 c     Initialise our simulation, load file, draw it.
         call cuarr(arr, m)
         call readpbm(arr, m, w, h, ar)

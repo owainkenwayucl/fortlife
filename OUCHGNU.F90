@@ -55,3 +55,9 @@ function getrand(seed)
   getrand = rand()
 
 end
+
+! Sleep that only happens on DOS
+  subroutine dossleep(seconds)
+    implicit none
+      integer :: seconds
+  end

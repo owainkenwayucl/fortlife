@@ -58,8 +58,26 @@ c     Need to pass seed as that's always needed by OpenWatcom
 
       end
 
-c     Stub as there is no sleep.
+c     Sleep that only happens on DOS
+      subroutine dossleep(seconds)
+        implicit none
+        integer seconds
+        call sleep(seconds)
+      end
+
+c     Literal delay loop as we have no sleep and are on DOS
       subroutine sleep(seconds)
         implicit none
         integer seconds
+        integer*2 hrs,mins,sec,hsec
+        real*8 elap, start, now
+
+        elap = 0.0d0
+        call gettim(hrs,mins,sec,hsec)
+        start = (3600*hrs) + (60 * mins) + sec + (hsec/100.0d0)
+        do while (elap .le. seconds)         
+          call gettim(hrs,mins,sec,hsec)
+          now = (3600*hrs) + (60 * mins) + sec + (hsec/100.0d0)
+          elap = now - start
+        end do
       end

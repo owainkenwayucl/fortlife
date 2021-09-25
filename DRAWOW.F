@@ -185,10 +185,20 @@ c     Print a period2d array, double lines.
           fh = maxl
         endif
         fh = (fh+1)/2
+        call clearterm()
         call prtop(w)
         do i = 1, fh
           call pr2line(arr, m, w, h, (i*2)-1)
         enddo 
         call prbot(w)
-      end 
+      end
 
+c Subroutine to clear terminal.
+      subroutine clearterm() 
+        implicit none
+        write(*,66) char(27)
+        write(*,66) '[2J'
+        write(*,66) char(27)
+        write(*,66) '[;H'
+  66    format(A,$)
+      end
