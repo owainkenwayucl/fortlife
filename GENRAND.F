@@ -28,7 +28,7 @@ c     Get args via our platform independent wrapper.
           call getargat(4, opt, l)
           read(opt,*) seed 
         else
-          stop 'Invoke with: genblank.exe <w> <h> <p> <seed> <filename>'
+          stop 'Invoke with: genrand.exe <w> <h> <p> <seed> <filename>'
 
         endif
 
