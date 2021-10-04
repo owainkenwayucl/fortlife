@@ -30,3 +30,9 @@
 *.exe
 *.out
 *.app
+
+# Output files
+output/
+
+# Makefile sym-link
+Makefile
