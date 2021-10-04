@@ -2,7 +2,7 @@ c     Conway's game of life
 c     This implementation is mostly targetted at FreeDOS but also builds
 c     (with more basic ASCII graphics) on GFortran on Linux.
 c
-c     Owain Kenway, 2017
+c     Owain Kenway, 2021
       program life
         implicit none
 

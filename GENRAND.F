@@ -1,6 +1,6 @@
 c     Utility to generate random PBMs
 c
-c     Owain Kenway, 2017
+c     Owain Kenway, 2021
       program genrand
         implicit none
 

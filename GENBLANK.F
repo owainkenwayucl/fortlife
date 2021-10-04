@@ -1,6 +1,6 @@
 c     Utility to generate blank PBMs
 c
-c     Owain Kenway, 2017
+c     Owain Kenway, 2021
       program genblank
         implicit none
 

@@ -1,5 +1,5 @@
 c     Tool to display the top left corner of a PBM file.
-c     Owain Kenway, 2017
+c     Owain Kenway, 2021
       program show
         implicit none
 
