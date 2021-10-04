@@ -30,6 +30,7 @@
 *.exe
 *.out
 *.app
+*.braille
 
 # Output files
 output/
