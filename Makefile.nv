@@ -3,22 +3,22 @@ FC=nvfortran
 all: life.exe show.exe genblank.exe genrand.exe tidy
 
 life.braille: LIFE.o PERIOD2D.o PBMTOOLS.o OUCHNV.o DRAWBRAI.o 
-	$(FC) -o life.braille LIFE.o PERIOD2D.o PBMTOOLS.o OUCHGNU.o DRAWBRAI.o
+	$(FC) -o life.braille LIFE.o PERIOD2D.o PBMTOOLS.o OUCHNV.o DRAWBRAI.o
 
 show.braille: SHOW.o PERIOD2D.o PBMTOOLS.o OUCHNV.o DRAWBRAI.o
-	$(FC) -o show.braille SHOW.o PERIOD2D.o PBMTOOLS.o OUCHGNU.o DRAWBRAI.o
+	$(FC) -o show.braille SHOW.o PERIOD2D.o PBMTOOLS.o OUCHNV.o DRAWBRAI.o
 
 life.exe: LIFE.o PERIOD2D.o PBMTOOLS.o OUCHNV.o DRAWGNU.o
-	$(FC) -o life.exe LIFE.o PERIOD2D.o PBMTOOLS.o OUCHGNU.o DRAWGNU.o
+	$(FC) -o life.exe LIFE.o PERIOD2D.o PBMTOOLS.o OUCHNV.o DRAWGNU.o
 
 show.exe: SHOW.o PERIOD2D.o PBMTOOLS.o OUCHNV.o DRAWGNU.o
-	$(FC) -o show.exe SHOW.o PERIOD2D.o PBMTOOLS.o OUCHGNU.o DRAWGNU.o
+	$(FC) -o show.exe SHOW.o PERIOD2D.o PBMTOOLS.o OUCHNV.o DRAWGNU.o
 
 genblank.exe: GENBLANK.o PERIOD2D.o PBMTOOLS.o OUCHNV.o DRAWGNU.o
-	$(FC) -o genblank.exe GENBLANK.o PERIOD2D.o PBMTOOLS.o OUCHGNU.o DRAWGNU.o
+	$(FC) -o genblank.exe GENBLANK.o PERIOD2D.o PBMTOOLS.o OUCHNV.o DRAWGNU.o
 
 genrand.exe: GENRAND.o PERIOD2D.o PBMTOOLS.o OUCHNV.o DRAWGNU.o
-	$(FC) -o genrand.exe GENRAND.o PERIOD2D.o PBMTOOLS.o OUCHGNU.o DRAWGNU.o
+	$(FC) -o genrand.exe GENRAND.o PERIOD2D.o PBMTOOLS.o OUCHNV.o DRAWGNU.o
 
 LIFE.o: LIFE.F Makefile.nv
 	$(FC) -c LIFE.F
@@ -34,9 +34,6 @@ GENRAND.o: GENRAND.F Makefile.nv
 
 DRAWGNU.o: DRAWGNU.F Makefile.nv
 	$(FC) -c DRAWGNU.F
-
-OUCHGNU.o: OUCHGNU.F90 Makefile.nv
-	$(FC) -c OUCHGNU.F90
 
 OUCHNV.o: OUCHNV.F90 Makefile.nv
 	$(FC) -c OUCHGNU.F90
