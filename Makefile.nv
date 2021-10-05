@@ -1,0 +1,54 @@
+FC=nvfortran
+
+all: life.exe show.exe genblank.exe genrand.exe tidy
+
+life.braille: LIFE.o PERIOD2D.o PBMTOOLS.o OUCHNV.o DRAWBRAI.o 
+	$(FC) -o life.braille LIFE.o PERIOD2D.o PBMTOOLS.o OUCHGNU.o DRAWBRAI.o
+
+show.braille: SHOW.o PERIOD2D.o PBMTOOLS.o OUCHNV.o DRAWBRAI.o
+	$(FC) -o show.braille SHOW.o PERIOD2D.o PBMTOOLS.o OUCHGNU.o DRAWBRAI.o
+
+life.exe: LIFE.o PERIOD2D.o PBMTOOLS.o OUCHNV.o DRAWGNU.o
+	$(FC) -o life.exe LIFE.o PERIOD2D.o PBMTOOLS.o OUCHGNU.o DRAWGNU.o
+
+show.exe: SHOW.o PERIOD2D.o PBMTOOLS.o OUCHNV.o DRAWGNU.o
+	$(FC) -o show.exe SHOW.o PERIOD2D.o PBMTOOLS.o OUCHGNU.o DRAWGNU.o
+
+genblank.exe: GENBLANK.o PERIOD2D.o PBMTOOLS.o OUCHNV.o DRAWGNU.o
+	$(FC) -o genblank.exe GENBLANK.o PERIOD2D.o PBMTOOLS.o OUCHGNU.o DRAWGNU.o
+
+genrand.exe: GENRAND.o PERIOD2D.o PBMTOOLS.o OUCHNV.o DRAWGNU.o
+	$(FC) -o genrand.exe GENRAND.o PERIOD2D.o PBMTOOLS.o OUCHGNU.o DRAWGNU.o
+
+LIFE.o: LIFE.F Makefile.nv
+	$(FC) -c LIFE.F
+
+SHOW.o: SHOW.F Makefile.nv
+	$(FC) -c SHOW.F
+
+GENBLANK.o: GENBLANK.F Makefile.nv
+	$(FC) -c GENBLANK.F
+
+GENRAND.o: GENRAND.F Makefile.nv
+	$(FC) -c GENRAND.F
+
+DRAWGNU.o: DRAWGNU.F Makefile.nv
+	$(FC) -c DRAWGNU.F
+
+OUCHGNU.o: OUCHGNU.F90 Makefile.nv
+	$(FC) -c OUCHGNU.F90
+
+OUCHNV.o: OUCHNV.F90 Makefile.nv
+	$(FC) -c OUCHGNU.F90
+
+PERIOD2D.o: PERIOD2D.F Makefile.nv
+	$(FC) -c PERIOD2D.F
+
+PBMTOOLS.o: PBMTOOLS.F Makefile.nv
+	$(FC) -c PBMTOOLS.F
+
+tidy: 
+	rm -f *.o
+
+clean: 
+	rm -f *.exe *.braille *.o 
