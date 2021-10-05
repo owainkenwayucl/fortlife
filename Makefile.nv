@@ -36,7 +36,7 @@ DRAWGNU.o: DRAWGNU.F Makefile.nv
 	$(FC) -c DRAWGNU.F
 
 OUCHNV.o: OUCHNV.F90 Makefile.nv
-	$(FC) -c OUCHGNU.F90
+	$(FC) -c OUCHNV.F90
 
 PERIOD2D.o: PERIOD2D.F Makefile.nv
 	$(FC) -c PERIOD2D.F
