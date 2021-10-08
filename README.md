@@ -12,6 +12,8 @@ On FreeDOS, install the Open Watcom Fortran compiler, download the repository an
 
 On Linux, you can compile the code with gfortran by running `make -f Makefile.gnu`.  You can also build the show utility, but you are better of using basically any other image viewer.
 
+There are also makefiles for Intel Fortran (`Makefile.if`) and Nvidia Fortran (`Makefile.nv`).  Neither of these currently support Braille output.
+
 (Testing has shown that the Linux version of `life.exe` compiles successfully under Cygwin, the only downside being font support in MinTTY).
 
 There is a special Linux version if your font has braille characters, which can be run by running `life.braille`.
