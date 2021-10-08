@@ -52,6 +52,8 @@ function getrand(seed)
   real :: getrand
   integer :: seed
 
+  real :: rand
+
   getrand = rand()
 
 end
